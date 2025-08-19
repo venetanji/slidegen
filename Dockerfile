@@ -3,7 +3,9 @@ FROM node:20-slim
 # Install Marp CLI
 RUN apt-get update && \
     apt-get install -y curl && \
-    npm install -g @marp-team/marp-cli
+    npm install -g @marp-team/marp-cli && \
+    apt-get install -y --no-install-recommends chromium && \
+    rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
