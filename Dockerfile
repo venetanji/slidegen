@@ -1,20 +1,17 @@
-# Dockerfile
+FROM node:20-slim
 
-FROM node:14
+# Install Marp CLI
+RUN apt-get update && \
+    apt-get install -y curl && \
+    npm install -g @marp-team/marp-cli
 
-# Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
 COPY package*.json ./
-
 RUN npm install
 
-# Copy app source
 COPY . .
 
-# Expose the app port
 EXPOSE 3000
 
-# Command to run the app
 CMD [ "node", "src/server.js" ]
