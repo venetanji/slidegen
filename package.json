@@ -1,0 +1,19 @@
+{  
+  "name": "slidegen",  
+  "version": "1.0.0",  
+  "description": "REST API to convert Markdown to PPTX slides using Marp",  
+  "main": "src/server.js",  
+  "scripts": {  
+    "start": "node src/server.js",  
+    "dev": "nodemon src/server.js"  
+  },  
+  "author": "venetanji",  
+  "license": "MIT",  
+  "dependencies": {  
+    "express": "^4.19.2",  
+    "tmp": "^0.2.1"  
+  },  
+  "devDependencies": {  
+    "nodemon": "^3.1.0"  
+  }  
+}
